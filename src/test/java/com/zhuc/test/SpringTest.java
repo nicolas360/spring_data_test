@@ -4,9 +4,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.web.util.HtmlUtils;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.zhuc.mongo.dao.CommandDao;
 import com.zhuc.mongo.entity.Command;
@@ -41,6 +42,8 @@ public class SpringTest {
 	}
 
 	@Test
+	@Rollback(false)
+	@Transactional(rollbackFor = Exception.class)
 	public void t1() {
 		User u = new User();
 		u.setAge(25);
@@ -48,9 +51,18 @@ public class SpringTest {
 
 		//		userDao.save(u);
 
-		System.out.println(userDao.count());
-		System.out.println(HtmlUtils.htmlEscape("&"));
-		System.out.println(HtmlUtils.htmlUnescape("&amp;"));
+		//		System.out.println(userDao.count());
+		//		System.out.println(HtmlUtils.htmlEscape("&"));
+		//		System.out.println(HtmlUtils.htmlUnescape("&amp;"));
+		//
+		//		userDao.entityManager();
+		userDao.jdbc();
+		try {
+			throw new Exception("123");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }
