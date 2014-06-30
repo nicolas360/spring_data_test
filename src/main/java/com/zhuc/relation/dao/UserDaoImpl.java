@@ -40,6 +40,14 @@ public class UserDaoImpl implements UserDaoPlus {
 		jdbcTemplate.batchUpdate("insert into T_USER (name, age) values (?, ?)", paramsList);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.zhuc.relation.dao.UserDaoPlus#cascade(java.lang.Long, java.lang.String)
+	 */
+	@Override
+	public void cascade(Long id, String string) {
+		jdbcTemplate.update("insert into T_USER_EXT (USER_ID, CONTENT) values (?, ?)", new Object[] { id, string });
+	}
+
 	@SuppressWarnings("unchecked")
 	public void entityManager() {
 		EntityManager em = emf.createEntityManager();

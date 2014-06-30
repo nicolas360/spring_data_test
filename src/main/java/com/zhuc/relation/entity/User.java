@@ -1,5 +1,6 @@
 package com.zhuc.relation.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,6 +16,7 @@ public class User {
 	@GeneratedValue
 	private Long id;
 
+	@Column(length = 2000)
 	private String name;
 
 	private Integer age;
@@ -58,6 +60,12 @@ public class User {
 	 * @param age the age to set
 	 */
 	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public User(String name, Integer age) {
+		super();
+		this.name = name;
 		this.age = age;
 	}
 
