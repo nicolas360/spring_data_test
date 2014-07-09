@@ -1,7 +1,10 @@
 package com.zhuc.test;
 
+import com.zhuc.common.utils.SpringContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.ContextConfiguration;
@@ -14,9 +17,8 @@ import com.zhuc.relation.service.UserService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({ "/applicationContext.xml" })
 public class SpringTest {
-
-	//	@Autowired
-	//	private UserDao userDao;
+    
+    private static final Logger logger = LoggerFactory.getLogger(SpringTest.class);
 
 	@Autowired
 	private CommandDao commandDao;
@@ -38,13 +40,16 @@ public class SpringTest {
 		commandDao.getMt().save(c);
 
 		long count = commandDao.getMt().count(new Query(), Command.class);
-		System.out.println(count);
+		logger.debug(""+count);
 	}
 
 	@Test
 	public void t1() throws Exception {
 		//		userService.save();
 		userService.cascade();
+
+        logger.debug(""+commandDao);
+        logger.debug(""+SpringContext.getBean("commandDao"));
 	}
 
 }
