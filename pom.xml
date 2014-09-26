@@ -12,16 +12,16 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.7</jdk.version>
 
-		<spring.version>3.2.9.RELEASE</spring.version>
-		<spring-data-jpa.version>1.6.0.RELEASE</spring-data-jpa.version>
-		<spring-data-mongodb.version>1.5.0.RELEASE</spring-data-mongodb.version>
-		<hibernate.version>4.2.13.Final</hibernate.version>
-		<druid.version>1.0.6</druid.version>
-		<mysql.driver.version>5.1.31</mysql.driver.version>
+		<spring.version>4.1.0.RELEASE</spring.version>
+		<spring-data-jpa.version>1.7.0.RELEASE</spring-data-jpa.version>
+		<spring-data-mongodb.version>1.6.0.RELEASE</spring-data-mongodb.version>
+		<hibernate.version>4.3.6.Final</hibernate.version>
+		<druid.version>1.0.9</druid.version>
+		<mysql.driver.version>5.1.33</mysql.driver.version>
 		<logback.version>1.1.2</logback.version>
-		<guava.version>17.0</guava.version>
+		<guava.version>18.0</guava.version>
 		<commons-lang3.version>3.3.2</commons-lang3.version>
-		<joda-time.version>2.3</joda-time.version>
+		<joda-time.version>2.4</joda-time.version>
 		<fastjson.version>1.1.41</fastjson.version>
 	</properties>
 
