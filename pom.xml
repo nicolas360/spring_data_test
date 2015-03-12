@@ -23,6 +23,7 @@
 		<commons-lang3.version>3.3.2</commons-lang3.version>
 		<joda-time.version>2.4</joda-time.version>
 		<fastjson.version>1.1.41</fastjson.version>
+		<httpclient.version>4.2.5</httpclient.version>
 	</properties>
 
 	<dependencies>
@@ -30,6 +31,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 
@@ -102,6 +109,18 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpclient.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.2</version>
 		</dependency>
 
 		<!-- test -->
