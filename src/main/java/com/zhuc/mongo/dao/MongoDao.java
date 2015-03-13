@@ -31,6 +31,10 @@ public abstract class MongoDao<T> {
 		mt.insert(t);
 	}
 
+	public void remove(T t) {
+		mt.remove(t);
+	}
+
 	public void save(List<T> list) {
 		if (!list.isEmpty()) {
 			mt.insert(list, list.get(0).getClass());

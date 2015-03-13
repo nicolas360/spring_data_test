@@ -37,12 +37,12 @@
     <logger name="org.quartz" level="WARN"/>
 
 	<!-- show parameters for hibernate sql 专为 Hibernate 定制 -->
-<!--     <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/> -->
-<!--     <logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="DEBUG"/> -->
-<!--     <logger name="org.hibernate.id.IdentifierGeneratorHelper" level="DEBUG"/> -->
-<!--     <logger name="org.hibernate.SQL" level="DEBUG"/> -->
-<!--     <logger name="org.hibernate.engine.QueryParameters" level="DEBUG"/> -->
-<!--     <logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG"/> -->
+     <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>
+     <logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="DEBUG"/>
+     <logger name="org.hibernate.id.IdentifierGeneratorHelper" level="DEBUG"/>
+     <logger name="org.hibernate.SQL" level="DEBUG"/>
+     <logger name="org.hibernate.engine.QueryParameters" level="DEBUG"/>
+     <logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG"/>
     
     <!-- 系统日志过滤 -->
     <logger name="com.shcmct.common.utils.EntityManagerInViewExtendFilter" level="WARN"/>

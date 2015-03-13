@@ -1,5 +1,7 @@
 package com.zhuc.test;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -10,12 +12,16 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
 import com.zhuc.common.utils.SpringContext;
 import com.zhuc.mongo.dao.CommandDao;
+import com.zhuc.mongo.dao.GlobalDao;
 import com.zhuc.mongo.entity.Command;
 import com.zhuc.relation.dao.AirLineDao;
+import com.zhuc.relation.dao.UserDao;
 import com.zhuc.relation.entity.AirLine;
 import com.zhuc.relation.entity.AirLinePK;
+import com.zhuc.relation.entity.User;
 import com.zhuc.relation.service.CommonService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -33,11 +39,34 @@ public class SpringTest {
 	@Autowired
 	private AirLineDao airLineDao;
 
+	@Autowired
+	private UserDao userDao;
+
+	@Autowired
+	private GlobalDao globalDao;
+
+	@Test
+	public void global() {
+		//		long t = globalDao.getAcitveCount();
+		//		System.out.println(t);
+	}
+
+	//	@Test
+	public void test() {
+		List<User> list = null;
+		List<User> list2 = Lists.newArrayList();
+		userDao.save(list);
+		userDao.save(list2);
+
+		//		User u = new User("12321", 123);
+		//		userDao.save(u);
+	}
+
 	/**
 	 * 推荐使用@Embeddable, 因为dao方法继承ID类, 使用spring data jpa更方便<br>
 	 * 联合主键
 	 */
-	@Test
+	//	@Test
 	public void lianhe() {
 		AirLinePK pk = new AirLinePK();
 		pk.setStartCity("Shanghai");

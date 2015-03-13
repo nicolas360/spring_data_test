@@ -111,6 +111,9 @@
 		<constructor-arg index="0" ref="dataSource" />
 	</bean>
 	
+	
+	
+	<!-- mongodb -->
 	<bean id="userCredentials" class="org.springframework.data.authentication.UserCredentials" >
 		<constructor-arg name="username" value="${mongodb_username}" />
 		<constructor-arg name="password" value="${mongodb_password}" />
@@ -124,5 +127,25 @@
 		<property name="host" value="${mongodb_ip}"></property>
 		<property name="port" value="${mongodb_port}"></property>
 	</bean>
+	
+	
+	
+	
+	
+	<!-- redis -->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="${redis_pool_maxIdle}" />
+        <property name="testOnBorrow" value="${redis_pool_testOnBorrow}" />
+    </bean>
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig" />
+        <constructor-arg index="1" value="${redis_host}" />
+        <constructor-arg index="2" value="${redis_port}" />
+        <constructor-arg index="3" value="${redis_timeout}" />
+        <constructor-arg index="4" value="${redis_pass}" />
+    </bean>
+	
+	
+	
 
 </beans>

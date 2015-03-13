@@ -19,6 +19,9 @@ public class Test2 {
 		String[] c = ArrayUtils.addAll(a, b);
 
 		System.out.println(Arrays.toString(c));
+		System.out.println();
+		System.out.println();
+		System.out.println();
 	}
 
 }
